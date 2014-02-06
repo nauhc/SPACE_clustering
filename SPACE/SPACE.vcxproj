@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AbstractData.cpp" />
+    <ClCompile Include="BBox.cpp" />
+    <ClCompile Include="CLaMS.cpp" />
+    <ClCompile Include="GLAttribute.cpp" />
+    <ClCompile Include="GLBufferObject.cpp" />
+    <ClCompile Include="GLError.cpp" />
+    <ClCompile Include="GLIndexBufferObject.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mathtool.cpp" />
+    <ClCompile Include="vec3f.cpp" />
+    <ClCompile Include="vec3i.cpp" />
+    <ClCompile Include="vec4f.cpp" />
+    <ClCompile Include="vec4i.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AbstractData.h" />
+    <ClInclude Include="BBox.h" />
+    <ClInclude Include="CLaMS.h" />
+    <ClInclude Include="CLaMSAttribute.h" />
+    <ClInclude Include="constant.h" />
+    <ClInclude Include="GLAttribute.h" />
+    <ClInclude Include="GLBufferObject.h" />
+    <ClInclude Include="GLConfig.h" />
+    <ClInclude Include="GLError.h" />
+    <ClInclude Include="GLIndexBufferObject.h" />
+    <ClInclude Include="GLVertexBufferObject.h" />
+    <ClInclude Include="mathtool.h" />
+    <ClInclude Include="vec2i.h" />
+    <ClInclude Include="vec3f.h" />
+    <ClInclude Include="vec3i.h" />
+    <ClInclude Include="vec4f.h" />
+    <ClInclude Include="vec4i.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6BFD0CC2-5E16-42A9-9F35-604AF9E4B719}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GLUTsimple</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;C:\Users\Chuan\Documents\Visual Studio 2010\Projects\libs\freeglut-2.8.1\include;C:\Users\Chuan\Documents\Visual Studio 2010\Projects\libs\glew-1.10.0\include;E:\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include;E:\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore;E:\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtOpenGL;E:\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets;E:\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\Users\Chuan\Documents\Visual Studio 2010\Projects\libs\freeglut-2.8.1\lib\$(PlatformName)\$(ConfigurationName);C:\Users\Chuan\Documents\Visual Studio 2010\Projects\libs\glew-1.10.0\lib\$(ConfigurationName)\$(PlatformName)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qtmaind.lib;Qt5OpenGLd.lib;Qt5Guid.lib;Qt5Cored.lib;Qt5Widgets.lib;glew32d.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\;C:\Users\Chuan\Documents\Visual Studio 2010\Projects\libs\freeglut-2.8.1\include;C:\Users\Chuan\Documents\Visual Studio 2010\Projects\libs\glew-1.10.0\include;E:\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include;E:\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtCore;E:\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtOpenGL;E:\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtWidgets;E:\Qt\Qt5.1.1\5.1.1\msvc2012_64_opengl\include\QtGui</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\Users\Chuan\Documents\Visual Studio 2010\Projects\libs\freeglut-2.8.1\lib\$(PlatformName)\$(ConfigurationName);C:\Users\Chuan\Documents\Visual Studio 2010\Projects\libs\glew-1.10.0\lib\$(ConfigurationName)\$(PlatformName)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qtmain.lib;Qt5OpenGL.lib;Qt5Gui.lib;Qt5Core.lib;Qt5Widgets.lib;glew32.lib;freeglut.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

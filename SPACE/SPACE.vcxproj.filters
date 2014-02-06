@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{472f9537-38eb-4493-852c-2cd74d78660f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLaMS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vec3f.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="vec4f.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="vec3i.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="GLIndexBufferObject.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="GLBufferObject.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="GLAttribute.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="GLError.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="vec4i.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="BBox.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="mathtool.cpp">
+      <Filter>lib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="vec2i.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="vec4f.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3f.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3i.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="GLIndexBufferObject.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="GLVertexBufferObject.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="GLBufferObject.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="GLAttribute.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="CLaMS.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GLError.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="GLConfig.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractData.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vec4i.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="constant.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="BBox.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="mathtool.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="CLaMSAttribute.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
