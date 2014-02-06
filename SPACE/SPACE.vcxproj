@@ -20,6 +20,7 @@
     <ClCompile Include="GLIndexBufferObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mathtool.cpp" />
+    <ClCompile Include="streamlineClustering.cpp" />
     <ClCompile Include="vec3f.cpp" />
     <ClCompile Include="vec3i.cpp" />
     <ClCompile Include="vec4f.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="GLIndexBufferObject.h" />
     <ClInclude Include="GLVertexBufferObject.h" />
     <ClInclude Include="mathtool.h" />
+    <ClInclude Include="streamlineClustering.h" />
     <ClInclude Include="vec2i.h" />
     <ClInclude Include="vec3f.h" />
     <ClInclude Include="vec3i.h" />
