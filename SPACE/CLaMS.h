@@ -42,6 +42,9 @@ public:
 	void CreateVBO2();
 	void draw2();
 	void dumpIthPathlineTOFile();
+
+	void clustering();
+
 private:
    
     lily::BBox   m_bboxPlanarMode;

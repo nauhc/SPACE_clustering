@@ -11,7 +11,15 @@ struct OneLine{
 class streamlineClustering
 {
 private:
-	QVector<int> ids; // = linesID
+	int nrows; // pathline dimension 
+	int ncols; // feature dimension
+	int		*clusterid;
+	double	**data;
+	double	**cdata;
+	int		**mask;
+	double	*weight;
+
+	QVector<int> target; // = linesID
 	QVector<int> results; 
 	QVector<OneLine> lineInfo;
 	QVector<double> center;
@@ -22,11 +30,8 @@ public:
 	streamlineClustering(void);
 	~streamlineClustering(void);
 
-	int 	m_clusteringMode;
-	int		m_nosClusters1,m_nosClusters2; // 0: non-init, 1,2,3...etc
-	//vector<Vector3>	m_cluster1Color,m_cluster2Color;
-
 	void	setStreamlineIDs();
+	void	setData(int pathlineDim, int featDim);
 	void	setClusterNum(int num);
 	void    runKMeans(QVector<int> &target,
 					  QVector<int> &resultID,

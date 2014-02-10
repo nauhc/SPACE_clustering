@@ -1,37 +1,50 @@
 #include "streamlineClustering.h"
-
+#include "CLaMS.h"
 
 streamlineClustering::streamlineClustering(void){
 	// --- initialize lineInfo
-
-
-	ids.resize(lineInfo.size());
-	for(int q=0;q<ids.size();++q)
-		ids[q] = lineInfo[q].linesID;
-
-	QVector<int> results = ids;
+	nrows = 0;
+	ncols = 0;
 	clustermethod = 0;
-	numCluster = 10;
+	numCluster = 20;
 }
 
 
 streamlineClustering::~streamlineClustering(void){
 }
 
-void streamlineClustering::doClustering(){
+void streamlineClustering::setData(int pathlineDim, int featDim){
+	nrows = pathlineDim;
+	ncols = featDim;
+	//clusterid = new int[nrows];
+	//data = new double*[nrows];
+	//cdata = new double*[nrows];
+	//mask = new int*[nrows];
+	//weight = new double[ncols];
 
+	//for(int w=0;w<nrows;++w){
+	//	data[w] = new double[ncols];
+	//	mask[w] = new int[ncols];
+	//	cdata[w] = new double[ncols];
+	//}
+	//for(int q=0;q<ncols;q++) weight[q] = 1.0;
+}
+
+void streamlineClustering::setClusterNum(int num){
+	numCluster = num;
 }
 
 void streamlineClustering::runKMeans(QVector<int> &target,
 									QVector<int> &resultID,
 									int nosCluster,
 									QVector<QVector<double> > &center,
-									int method=0){
-	int nrows = target.size();
-	int ncols = 9; // number of features, starting (x,y,z), middle, ending
+	 								int method=0){
+	//int nrows = target.size();
+	//int ncols = 9; // number of features, starting (x,y,z), middle, ending
 
-		if(clustermethod == 1)
-		ncols = 2; // // entL, entA
+	//if(clustermethod == 1)
+	//	ncols = 2; // // entL, entA
+
 
 	center.resize(nrows);
 	for(int a=0;a<nrows;++a)
@@ -45,18 +58,18 @@ void streamlineClustering::runKMeans(QVector<int> &target,
 	const int transpose = 0;
 	double error;
 
-	int		*clusterid = new int[nrows];
-	double	**data = new double*[nrows];
-	double	**cdata = new double*[nrows];
-	int		**mask = new int*[nrows];
-	double	*weight = new double[ncols];
+	//int		*clusterid = new int[nrows];
+	//double	**data = new double*[nrows];
+	//double	**cdata = new double*[nrows];
+	//int		**mask = new int*[nrows];
+	//double	*weight = new double[ncols];
 
-	for(int w=0;w<nrows;++w){
-		data[w] = new double[ncols];
-		mask[w] = new int[ncols];
-		cdata[w] = new double[ncols];
-	}
-	for(int q=0;q<ncols;q++) weight[q] = 1.0;
+	//for(int w=0;w<nrows;++w){
+	//	data[w] = new double[ncols];
+	//	mask[w] = new int[ncols];
+	//	cdata[w] = new double[ncols];
+	//}
+	//for(int q=0;q<ncols;q++) weight[q] = 1.0;
 
 	for(size_t a=0;a<target.size();++a){
 		int id = target[a];
@@ -156,4 +169,7 @@ void streamlineClustering::runKMeans(QVector<int> &target,
 	}
 	delete [] data;
 	delete [] mask;
+}
+
+void streamlineClustering::doClustering(){
 }

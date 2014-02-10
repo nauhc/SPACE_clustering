@@ -246,7 +246,8 @@ void CLaMS::load( const string& fileName )
 void CLaMS::setCurActivePathLineId( GLuint n )
 { 
 	m_activePathlineId = (GLuint)std::max((int)n, (int)0);
-	m_activePathlineId = std::min(m_activePathlineId, (GLint)(m_pathLinesConnectivity.size()-1));
+	m_activePathlineId = std::min(m_activePathlineId, 
+		(GLint)(m_pathLinesConnectivity.size()-1));
     m_totalCount=0;
     for (size_t i = 0 ; 
          i < m_maxPathlineToShow 
@@ -258,4 +259,55 @@ void CLaMS::setCurActivePathLineId( GLuint n )
 	cout << "curSelectedPathLine"<<m_activePathlineId
         <<"=(start:" << m_pathlineStartCountPairs[m_activePathlineId].x()
         <<"count:"<< m_totalCount <<endl;
+}
+
+void CLaMS::clustering(  ){
+	int n_pathln	= m_pathLinesConnectivity.size(); //pathline number
+	int n_feature	= 6; //feature numer: pressure, temp, vorticity, (x, y, z)
+
+	QVector<int> ids; 
+	ids.resize(n_pathln);
+	for(int q = 0; q < ids.size(); ++q){
+		ids[q] = m_pathLinesConnectivity[q].seedId;
+	}
+	QVector<int> results = ids;
+	
+	int clustermethod = 0; //0 or 1
+	int numCluster = 20;
+	if(numCluster > ids.size()){
+		cout << "error: numCluster greater than pathline number." << endl;
+		return;
+	}
+
+	const char dist = 'c';		//several choices
+	const char method = 'a';	// several choices
+	int npass = 100;
+	int ifound = 0;
+	const int nclusters = numCluster;
+	const int transpose = 0;
+	double error;
+
+	int nrows = n_pathln;
+	int ncols = n_feature;
+	int		*clusterid = new int[nrows];
+	double	**data = new double*[nrows];
+	double	**cdata = new double*[nrows];
+	int		**mask = new int*[nrows];
+	double	*weight = new double[ncols];
+
+	for(int w=0;w<nrows;++w){
+		data[w] = new double[ncols];
+		mask[w] = new int[ncols];
+		cdata[w] = new double[ncols];
+	}
+
+	for(int q=0;q<ncols;q++) weight[q] = 1.0;
+
+	//set data
+	for(size_t a = 0; a < ids.size(); ++a){
+		int id = ids[a];
+
+		data[a][0] = 
+	}
+
 }
